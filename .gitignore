@@ -42,4 +42,4 @@ out/
 node_modules/
 build/
 package-lock.json
-__pycache__
+__pycache__/
