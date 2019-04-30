@@ -2,7 +2,7 @@ import time
 
 
 class IncomeConfig:
-    __begin_date = '2010-01-01'
+    __begin_date = '2014-01-01'
     __end_date = '2018-12-31'
     file_path = './mfi.csv'  # 列顺序：时间	MFI原始	MFI六日平均	收盘价	累计涨幅
     r1 = [0.25, 3]  # 标准差
@@ -29,15 +29,6 @@ class IncomeConfig:
 
     def get_r1_ranges(self):
         return int((self.get_r1_up_limit() - self.get_r1_low_limit()) / self.r1_step)
-
-    def get_r2_low_limit(self):
-        return self.r2[0]
-
-    def get_r2_up_limit(self):
-        return self.r2[1]
-
-    def get_r2_ranges(self):
-        return int((self.get_r2_up_limit() - self.get_r2_low_limit()) / self.r2_step)
 
     def get_t_low_limit(self):
         return self.t[0]
