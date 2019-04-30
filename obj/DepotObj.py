@@ -18,6 +18,7 @@ class DepotObj:
         self.pay_transfer_fee()
         self.points = self.amount / mfi_obj.close_charge
         self.record_r_rate_track(mfi_obj)
+        # print("buy,charge_date:" + str(mfi_obj.charge_date))
 
     def sell(self, mfi_obj):
         if not self.is_have_point():
@@ -26,6 +27,7 @@ class DepotObj:
         self.pay_transfer_fee()
         self.points = 0
         self.record_r_rate_track(mfi_obj)
+        # print("sell,charge_date:" + str(mfi_obj.charge_date))
 
     def record_r_rate_track(self, mfi_obj):
         r_rate = self.get_r_rate()

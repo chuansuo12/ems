@@ -2,13 +2,11 @@ import time
 
 
 class IncomeConfig:
-    __begin_date = '2006-01-01'
-    __end_date = '2009-12-31'
+    __begin_date = '2010-01-01'
+    __end_date = '2018-12-31'
     file_path = './mfi.csv'  # 列顺序：时间	MFI原始	MFI六日平均	收盘价	累计涨幅
-    r1 = [0, 0.5]  # 下限参数
-    r1_step = 0.005
-    r2 = [0.5, 1]  # 上线参数
-    r2_step = 0.005
+    r1 = [0.25, 3]  # 标准差
+    r1_step = 0.05
     t = [10, 300]
     t_step = 10
     transfer_fee = 0.0001  # 手续费

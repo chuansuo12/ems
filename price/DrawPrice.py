@@ -1,11 +1,11 @@
-def draw_r_rate(depot_obj, t, r1, r2):
+def draw_r_rate(depot_obj, t, r1):
     import matplotlib.pyplot as plt
     x_array = []
     y_array = []
     for bis_track in depot_obj.bis_tracks:
         x_array.append(bis_track.charge_date)
         y_array.append(bis_track.r_rate)
-    plt.title("T:" + str(t) + ", r1:" + str(r1) + ", r2:" + str(r2))
+    plt.title("T:" + str(t) + ", r1:" + str(r1))
     plt.xlabel("date")
     plt.ylabel("return_rate")
     plt.plot(x_array, y_array)
