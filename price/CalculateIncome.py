@@ -3,11 +3,11 @@ import numpy
 
 def calculate_income(r1, r2, t, mfi_array, depot_obj):
     last_mfi_obj = mfi_array[0]
-    for index in range(0, mfi_array.__len__(), t):
+    for index in range(t, mfi_array.__len__(), t):
         if (index + t) > mfi_array.__len__():
             break
         cur_mfi_obj = mfi_array[index]
-        standard_deviation = __get_std(mfi_array[0:t])
+        standard_deviation = __get_std(mfi_array[index - t + 1:index + 1])
         low_limit = -1 * r1 * standard_deviation
         up_limit = r2 * standard_deviation
         if cur_mfi_obj.mfi_six_day_avg < low_limit:  # 当六日平均小于安全区间

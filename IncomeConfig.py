@@ -2,17 +2,17 @@ import time
 
 
 class IncomeConfig:
-    __begin_date = '2008-04-08'
-    __end_date = '2016-04-10'
-    file_path = './mfi.csv'  # 要保证第一列是时间，第二列是MFI，第三列是六日平均
-    r1 = [0.35, 0.65]  # 下限参数
+    __begin_date = '2006-01-01'
+    __end_date = '2009-12-31'
+    file_path = './mfi.csv'  # 列顺序：时间	MFI原始	MFI六日平均	收盘价	累计涨幅
+    r1 = [0, 0.5]  # 下限参数
     r1_step = 0.005
-    r2 = [0.35, 0.65]  # 上线参数
+    r2 = [0.5, 1]  # 上线参数
     r2_step = 0.005
     t = [10, 300]
     t_step = 10
-    transfer_fee = 0.0003  # 手续费
-    amount = 100000  # 账户初始总额
+    transfer_fee = 0.0001  # 手续费
+    amount = 10000000  # 账户初始总额
 
     def get_begin_date(self):
         return time.strptime(self.__begin_date, '%Y-%m-%d')

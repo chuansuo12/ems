@@ -20,7 +20,8 @@ def get_price_from_csv(csv_file_path, begin_date, end_date):
         csv_data = csv.reader(f)
         for mfi_line in islice(csv_data, 1, None):
             if mfi_line.__len__() > 3:
-                mfi_obj = MfiObj(mfi_line[0], float(mfi_line[1]), float(mfi_line[2]), float(mfi_line[3]), float(mfi_line[6]))
+                mfi_obj = MfiObj(mfi_line[0], float(mfi_line[1]), float(mfi_line[2]), float(mfi_line[3]),
+                                 float(mfi_line[4]))
                 mfi_obj_array.append(mfi_obj)
     if mfi_obj_array.__len__() == 0:
         print("请确认文件是否正确：" + csv_file_path)
