@@ -27,7 +27,7 @@ for t_index in range(config.get_t_ranges()):
                 max_r_rate_r1 = r1
                 max_r_rate_r2 = r2
                 max_r_rate_depot = depot_obj
-    print("current t:" + str(t))
+    print("current T:" + str(t))
 
 print("最佳收益率：" + str(max_r_rate))
 print("T：" + str(max_r_rate_t))

@@ -14,11 +14,14 @@ class IncomeConfig:
     transfer_fee = 0.0001  # 手续费
     amount = 10000000  # 账户初始总额
 
+    __format_begin_date = time.strptime(__begin_date, '%Y-%m-%d')
+    __format_end_date = time.strptime(__end_date, '%Y-%m-%d')
+
     def get_begin_date(self):
-        return time.strptime(self.__begin_date, '%Y-%m-%d')
+        return self.__format_begin_date
 
     def get_end_date(self):
-        return time.strptime(self.__end_date, '%Y-%m-%d')
+        return self.__format_end_date
 
     def get_r1_low_limit(self):
         return self.r1[0]
