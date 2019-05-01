@@ -17,7 +17,7 @@ class DepotObj:
             return
         self.pay_transfer_fee()
         self.points = self.amount / mfi_obj.close_charge
-        self.record_r_rate_track(mfi_obj)
+        self.record_r_rate_track(mfi_obj, 'buy')
         # print("buy,charge_date:" + str(mfi_obj.charge_date))
 
     def sell(self, mfi_obj):
@@ -26,12 +26,12 @@ class DepotObj:
         self.amount = self.points * mfi_obj.close_charge
         self.pay_transfer_fee()
         self.points = 0
-        self.record_r_rate_track(mfi_obj)
+        self.record_r_rate_track(mfi_obj, 'sell')
         # print("sell,charge_date:" + str(mfi_obj.charge_date))
 
-    def record_r_rate_track(self, mfi_obj):
+    def record_r_rate_track(self, mfi_obj, act):
         r_rate = self.get_r_rate()
-        bis_track_obj = BisTrackObj(mfi_obj.charge_date, r_rate)
+        bis_track_obj = BisTrackObj(mfi_obj.charge_date, r_rate, act)
         self.bis_tracks.append(bis_track_obj)
 
     def get_r_rate(self):

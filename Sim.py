@@ -31,6 +31,9 @@ print("最佳收益率：" + str(max_r_rate))
 print("T：" + str(max_r_rate_t))
 print("r1：" + str(max_r_rate_r1))
 
+for bis_track in max_r_rate_depot.bis_tracks:
+    print("charge_date:" + str(bis_track.charge_date) + " r_rate:[" + str(bis_track.r_rate) + "] act:" + bis_track.act)
+
 draw_close_charge(mfi_array)  # 画大盘收盘价曲线
 
 draw_r_rate(max_r_rate_depot, max_r_rate_t, max_r_rate_r1)  # 画最大收益时的收益率
