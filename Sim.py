@@ -32,7 +32,7 @@ print("R1：" + str(max_r_rate_r1))
 print("index return rate: " + str((mfi_array[-1].close_charge - mfi_array[0].close_charge) / mfi_array[0].close_charge))
 print("charge records: ")
 for bis_track in max_r_rate_depot.bis_tracks:
-    print("charge_date:" + str(bis_track.charge_date) + " r_rate:[" + str(bis_track.r_rate) + "] act:" + bis_track.act)
+    print("charge_date:" + str(bis_track.charge_date) + " r_rate:[" + str(bis_track.r_rate) + "] act: " + bis_track.act)
 
 draw_close_charge(mfi_array)  # 画大盘收盘价曲线
 
