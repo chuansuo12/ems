@@ -25,15 +25,18 @@ for t_index in range(config.get_t_ranges()):
             max_r_rate_t = t
             max_r_rate_r1 = r1
             max_r_rate_depot = depot_obj
-    print("current T:" + str(t))
 
 print("最佳收益率：" + str(max_r_rate))
 print("T：" + str(max_r_rate_t))
-print("r1：" + str(max_r_rate_r1))
-
+print("R1：" + str(max_r_rate_r1))
+print("index return rate: " + str((mfi_array[-1].close_charge - mfi_array[0].close_charge) / mfi_array[0].close_charge))
+print("charge records: ")
 for bis_track in max_r_rate_depot.bis_tracks:
     print("charge_date:" + str(bis_track.charge_date) + " r_rate:[" + str(bis_track.r_rate) + "] act:" + bis_track.act)
 
 draw_close_charge(mfi_array)  # 画大盘收盘价曲线
 
 draw_r_rate(max_r_rate_depot, max_r_rate_t, max_r_rate_r1)  # 画最大收益时的收益率
+print('\n')
+print('sim end')
+exit()
