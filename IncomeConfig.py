@@ -28,7 +28,7 @@ class IncomeConfig:
         return self.r1[1]
 
     def get_r1_ranges(self):
-        return int((self.get_r1_up_limit() - self.get_r1_low_limit()) / self.r1_step)
+        return int((self.get_r1_up_limit() - self.get_r1_low_limit()) / self.r1_step + 1)
 
     def get_t_low_limit(self):
         return self.t[0]
@@ -37,4 +37,4 @@ class IncomeConfig:
         return self.t[1]
 
     def get_t_ranges(self):
-        return int((self.get_t_up_limit() - self.get_t_low_limit()) / self.t_step)
+        return int((self.get_t_up_limit() - self.get_t_low_limit()) / self.t_step + 1)
